@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = "https://asset-inventory-3.onrender.com/";
+//const API_URL = "https://asset-inventory-3.onrender.com/";
+const API_URL = "http://localhost:5000";
 
 export const api = axios.create({
   baseURL: API_URL,
@@ -33,11 +34,11 @@ export const logoutUser = () => handleApiCall("get", "/logout");
 // Check authentication status (returns user data if authenticated)
 export const checkAuth = async () => {
   try {
-    const response = await api.get("/profile");
+    const response = await api.get("/my_profile");
     return response.data.user;
   } catch (error) {
     console.error("Authentication error:", error);
-    return null; // Return null if not authenticated
+    return null;
   }
 };
 
