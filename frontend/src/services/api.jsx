@@ -33,7 +33,7 @@ export const logoutUser = () => handleApiCall("get", "/logout");
 // Check authentication status (returns user data if authenticated)
 export const checkAuth = async () => {
   try {
-    const response = await api.get("/my_profile");
+    const response = await api.get("/profile");
     return response.data.user;
   } catch (error) {
     console.error("Authentication error:", error);
